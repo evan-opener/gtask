@@ -1,0 +1,19 @@
+{
+  "name": "pmtc",
+  "version": "1.0.0",
+  "description": "A mean stack project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Evan Xu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "morgan": "~1.3.0",
+    "compression": "~1.0.11",
+    "body-parser": "~1.8.0",
+    "method-override": "~2.2.0"
+  }
+}
