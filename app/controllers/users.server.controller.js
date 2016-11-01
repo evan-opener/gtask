@@ -28,11 +28,11 @@ exports.list = function(req, res, next) {
 };
 
 exports.read = function(req, res, next) {
-  res.json(user);
+  res.json(req.user);
 };
 
 exports.userByID = function(req, res, next, id) {
-  User.findone({
+  User.findOne({
     _id: id
   }, function(err, user) {
     if (err) {

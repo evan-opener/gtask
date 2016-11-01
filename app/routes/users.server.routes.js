@@ -8,8 +8,8 @@ module.exports = function (app) {
     .post(users.create)
     .get(users.list);
 
-  app.route('/users/:id')
-    .get(user.read);
+  app.route('/users/:userId')
+    .get(users.read);
 
-  app.param('userId', users.userbyID);
+  app.param('userId', users.userByID);
 };
