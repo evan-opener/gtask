@@ -6,6 +6,7 @@ var mongoose = require('mongoose')
 exports.create = function(req, res, next) {
   var user = new User(req.body);
 
+  // User create and save to mongodb
   user.save(function(err) {
     if (err) {
       return next(err);

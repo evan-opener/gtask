@@ -32,7 +32,9 @@ module.exports = function () {
   // set view engine as EJS
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
+  // index route
   require('../app/routes/index.server.routes')(app);
+  // user route
   require('../app/routes/users.server.routes')(app);
 
   // set static files
