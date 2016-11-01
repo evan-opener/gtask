@@ -4,6 +4,7 @@
   "description": "A mean stack project",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Evan Xu",
@@ -19,5 +20,11 @@
     "nodemon": "^1.11.0",
     "express-session": "~1.7.6",
     "mongoose": "~3.8.15"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-nodemon": "^2.2.1",
+    "run-sequence": "^1.2.2"
   }
 }
