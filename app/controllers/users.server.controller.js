@@ -90,7 +90,10 @@ exports.create = function(req, res, next) {
   });
 };
 
-// User find all users
+/*////////////////////////////////
+/  old controller for user REST. /
+
+/// User find all users
 exports.list = function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) {
@@ -137,6 +140,9 @@ exports.delete = function(req, res, next) {
     }
   });
 };
+
+
+////////////////////////////////*/
 // User special find
 /*
 exports.findName = function(req, res, next) {
@@ -149,3 +155,4 @@ exports.findName = function(req, res, next) {
   });
 };
 */
+
