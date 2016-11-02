@@ -1,6 +1,7 @@
 'use strict';
 
-var users = require('../controllers/users.server.controller');
+var users = require('../controllers/users.server.controller'),
+    passport = require('passport');
 
 module.exports = function (app) {
   // user create
