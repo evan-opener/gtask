@@ -35,7 +35,8 @@ var UserSchema = new Schema({
     lowercase: true,
     trim: true,
     default: '',
-    validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
+    validate: [validateLocalStrategyEmail, 'Please fill a valid email address'],
+    index: true
   },
   username: {
     type: String,
@@ -59,6 +60,26 @@ UserSchema.virtual('fullName').get(function () {
   this.firstName = splitName[0] || '';
   this.lastName = splitName[1] || '';
 });
+
+
+// A user post middleware
+UserSchema.post('save', function(next) {
+  if(this.isNew) {
+    console.log('A new user was created.');
+  } else {
+    console.log('A user updated is details.');
+  }
+});
+
+// Metho for authenticating user
+UserSchema.methods.authenticate = function(password) {
+  return this.password === password;
+};
+
+//Custom static mehods for find by username
+UserSchema.statics.findOneByUsername = function (username, callback) {
+  this.findOne({ useranme: new RegExp(username, 'i') }, callback);
+};
 
 UserSchema.set('toJSON', { getters: true, virtuals: true });
 
