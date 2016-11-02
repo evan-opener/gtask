@@ -77,7 +77,10 @@ exports.signout = function(req, res) {
   req.logout();
   res.redirect('/');
 };
-// User create and save to mongodb
+
+/*////////////////////////////////
+/  old controller for user REST. /
+/// User create and save to mongodb
 exports.create = function(req, res, next) {
   var user = new User(req.body);
 
@@ -90,8 +93,7 @@ exports.create = function(req, res, next) {
   });
 };
 
-/*////////////////////////////////
-/  old controller for user REST. /
+
 
 /// User find all users
 exports.list = function(req, res, next) {
