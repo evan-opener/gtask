@@ -6,6 +6,7 @@ var config = require('./config')
   , bodyParser = require('body-parser')
   , methodOverride = require('method-override')
   , session = require('express-session')
+  , flash = require('connect-flash')
   , passport = require('passport');
 
 module.exports = function () {
@@ -35,6 +36,7 @@ module.exports = function () {
   app.set('view engine', 'ejs');
 
   // passport middleware
+  app.use(flash());
   app.use(passport.initialize());
   app.use(passport.session());
   // index route
