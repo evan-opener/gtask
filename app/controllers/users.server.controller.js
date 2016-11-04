@@ -18,7 +18,7 @@ var getErrorMessage = function(err) {
         message = 'Somthing went wrong';
     }
   } else {
-    for (var errname in err.errors) {
+    for (var errName in err.errors) {
       if (err.errors[errName].message) {
         message = err.errors[errName].message;
       }

@@ -19,7 +19,7 @@ module.exports = function() {
       }
       // Invalid password
       if (!user.authenticate(password)) {
-        return done(null, fasle, {
+        return done(null, false, {
           message: 'Invalid password'
         });
       }
