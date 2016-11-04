@@ -1,0 +1,24 @@
+doctype
+head
+  -var title="gTask";
+
+body
+  h1 #{title}
+  if userFullName !== ''
+    h2 hello #{userFullName}
+    a(href="/signout") Sign Out
+  else
+    a(href="/signup") Sign Up
+    a(href="/signin") Sign In
+
+  br
+  img(src="img/logo.png")
+
+  - list = ['one', 'two', 'three'];
+
+  ul
+    each item in list
+      li=item
+  select
+    each item, i in list
+      option(value=i) item #{item}
