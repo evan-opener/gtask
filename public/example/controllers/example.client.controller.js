@@ -1,5 +1,5 @@
-angular.module('example').controller('ExampleController', ['$scope', function($scope) {
+angular.module('example').controller('ExampleController', ['$scope', 'authentication', function($scope, authentication) {
 
-    $scope.name = 'GTask application';
+    $scope.name = authentication.user ? authentication.user.userFullName : 'GTask User';
 
 }]);
