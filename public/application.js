@@ -4,7 +4,7 @@ var mainApplicationModuleName = 'gtask';
 
 // Use module method to create main application
 // The other module can be inject as dependencies
-var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngRoute', 'nexample']);
+var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngRoute', 'example']);
 
 // Make the route have the right url as /#!/xxx
 mainApplicationModule.config(['$locationProvider', function($locationProvider) {
