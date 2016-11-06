@@ -6,20 +6,20 @@
   <body>
 
     <h1><%= title %></h1>
-    <% if (user) { %>
-      <h2>Hello <%=userFullName%> </h2>
-      <a href="/signout">Sign out</a>
-    <% } else { %>
-      <a href="/signup">Sign Up</a>
-      <a href="/signin">Sign In</a>
-    <% } %>
+      <% if (user.fullName) { %>
+        <h3> Hello <%= user.fullName %></h3>
+        <a href="/signout">Sign out</a>
+      <% } else { %>
+        <a href="/signup">Sign Up</a>
+        <a href="/signin">Sign In</a>
+      <% } %>
     <br>
 
     <section ng-view></section>
 
     <!-- Use express to render the user and Angular will use a service to call it   -->
     <script type="text/javascript">
-      window.user = <%- user | 'null' %>
+      window.user = <%- user || 'null' %>;
     </script>
     <script type="text/javascript" src="/lib/angular/angular.js"></script>
     <script type="text/javascript" src="/application.js"></script>
@@ -27,7 +27,7 @@
     <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
     <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
-    <script type="text/javascript" src="/users/user.clinet.module.js"></script>
+    <script type="text/javascript" src="/users/user.client.module.js"></script>
     <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
   </body>
 </html>

@@ -18,10 +18,11 @@ module.exports = function () {
     app.use(compress());
   }
 
-  app.use(bodyParser.urlencoded({
-    entended: true
-  }));
+
   app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
   app.use(methodOverride());
 
   // config session

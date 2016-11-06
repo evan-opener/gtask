@@ -8,6 +8,6 @@ exports.render = function(req, res) {
 
   res.render('index', {
     title: 'gTask',
-    userFullName: req.user ? req.user.fullName : ''
+    user: req.user || 'null'
   });
 };
