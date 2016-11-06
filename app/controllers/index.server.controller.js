@@ -8,6 +8,6 @@ exports.render = function(req, res) {
 
   res.render('index', {
     title: 'gTask',
-    user: req.user || 'null'
+    user: JSON.stringify(req.user)
   });
 };
