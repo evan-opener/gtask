@@ -60,7 +60,11 @@ UserSchema.pre('save', function (next) {
 });
 // Hash the password with salt
 UserSchema.methods.hashPassword = function (password) {
-  return crypto.pbkdf2Sync(password, this.salt, 10000, 64).toString('base64');
+  if (this.salt && password) {
+    return crypto.pbkdf2Sync(password, new Buffer(this.salt, 'base64'), 10000, 64, 'SHA1').toString('base64');
+  } else {
+    return password;
+  }
 };
 // User authenticate for password
 UserSchema.methods.authenticate = function (password) {
