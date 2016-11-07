@@ -78,6 +78,18 @@ exports.signout = function(req, res) {
   res.redirect('/');
 };
 
+
+// Require login
+// It use the passport initiated req.isAuthenticated() method to check if the user is logged or not.
+exports.requireLogin = function(req, res, next) {
+  if (!req.isAuthenticated()) {
+    return res.status(401).send({
+      message: 'User is not logged in'
+    });
+  }
+
+  next();
+}
 /*////////////////////////////////
 /  old controller for user REST. /
 /// User create and save to mongodb

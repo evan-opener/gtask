@@ -44,6 +44,8 @@ module.exports = function () {
   require('../app/routes/index.server.routes')(app);
   // user route
   require('../app/routes/users.server.routes')(app);
+  // tasks route
+  require('../app/routes/tasks.server.routes')(app);
 
   // set static files
   app.use(express.static('./public'));

@@ -94,3 +94,13 @@ var getErrorMessage = function(err) {
     });
   };
 
+// Implementing an authorization middleware
+exports.hasAuthorization = function(req, res, next) {
+  if (req.task.creator.id !== req.user.id) {
+      return res.status(403).send({
+        message: 'User is not authorized'
+      });
+  }
+  next();
+};
+
