@@ -1,7 +1,7 @@
-var users = require('../../app/controllers/user.server.controller'),
+var users = require('../../app/controllers/users.server.controller'),
     tasks = require('../../app/controllers/tasks.server.controller');
 
-module.exports = funciton(app) {
+module.exports = function(app) {
   app.route('/api/tasks')
     .get(tasks.list)
     .post(users.requireLogin, tasks.create);
