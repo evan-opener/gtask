@@ -1,0 +1,38 @@
+<section ng-controller="TasksController" ng-init="findOne()">
+  <div class="page-header">
+    <small>
+      <em class="text-muted pull-right">
+        Created on
+        <span ng-bind="task.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="task.user"
+          ng-bind="task.user.displayName"></span>
+        <span ng-if="task.user">Unknow User</span>
+      </em>
+	  </small>
+    <h1 ng-bind="task.title"></h1>
+  </div>
+
+  <div>
+    <h3>
+      <strong>Scheduled</strong>
+      <small>from</small> {{task.created | date:'yyyy-MM-dd' }} <small>to</small> {{task.dueDate | date:'yyyy-MM-dd' }}
+    </h3>
+    <h4>
+      <strong>Assign To</strong>
+      {{task.polit}}
+    </h4>
+  </div>
+  <div class="well">
+  <p class="task" ng-bind="task.content"></p>
+  </div>
+  <div class="pull-right">
+    <a class="btn btn-primary"
+       href="/#!/tasks/{{task._id}}/edit">Edit
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" href="#" ng-click="delete()">Delete
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+</section>

@@ -4,31 +4,29 @@
     <title><%= title %></title>
   </head>
   <body>
-
-    <h1><%= title %></h1>
-      <% if (user) { %>
-        <h3> Hello <%= user.fullName %></h3>
-        <a href="/signout">Sign out</a>
-      <% } else { %>
-        <a href="/signup">Sign Up</a>
-        <a href="/signin">Sign In</a>
-      <% } %>
-    <br>
-
     <section ng-view></section>
 
     <!-- Use express to render the user and Angular will use a service to call it   -->
     <script type="text/javascript">
       window.user = <%- user || 'null' %>;
     </script>
+
+    <!--  Angulra module init  -->
     <script type="text/javascript" src="/lib/angular/angular.js"></script>
-    <script type="text/javascript" src="/application.js"></script>
-    <script type="text/javascript" src="/example/example.client.module.js"></script>
-    <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
     <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+    <!--  Example module  -->
+    <script type="text/javascript" src="/example/example.client.module.js"></script>
+    <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
     <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
     <script type="text/javascript" src="/users/user.client.module.js"></script>
     <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+    <!--  Tasks module  -->
+    <script type="text/javascript" src="/tasks/tasks.client.module.js"></script>
+    <script type="text/javascript" src="/tasks/controllers/tasks.client.controller.js"></script>
+    <script type="text/javascript" src="/tasks/services/tasks.client.service.js"></script>
+    <script type="text/javascript" src="/tasks/config/tasks.client.routes.js"></script>
+    <!--  Bootstrape for angular module  -->
+    <script type="text/javascript" src="/application.js"></script>
   </body>
 </html>

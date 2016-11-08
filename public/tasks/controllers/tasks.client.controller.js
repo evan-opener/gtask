@@ -35,7 +35,7 @@ angular.module('tasks').controller('TasksController', ['$scope', '$routeParams',
       $location.path('tasks/' + $scope.task._id);
     }, function(errorResponse) {
       $scope.error = errorResponse.data.message;
-    };
+    });
   };
 
   // Task delete
