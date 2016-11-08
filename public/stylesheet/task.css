@@ -1,0 +1,27 @@
+.formlabel {
+  color: grey;
+  padding-top: 30px
+}
+
+.padding-top{
+  padding-top: 30px
+}
+
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+.table-head {
+  font-family: Helvetica;
+  vertical-align: middle;
+  font-size: 1.3em;
+  background-color: #ecebeb
+}
+
+.task {
+  font-family: Helvetica;
+  font-size: 1.2em;
+  padding-top: 15px;
+}
+
+
